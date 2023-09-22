@@ -2,10 +2,10 @@
 
 ## User Stories and features
 
-Feature 1: Filter Events by City
+### Feature 1: Filter Events by City
 
-As a **User**
-I should be able to **filter events by city**
+As a **User**  
+I should be able to **filter events by city**  
 So that **I can see a list of events taking place in that city**
 
 **Scenario 1:**
@@ -22,10 +22,10 @@ User has searched for a specific city, show upcoming events for that city.
 - **When** the user opens the app
 - **Then** the user should see a list of upcoming events for that city
 
-Feature 2: Show/Hide Event Details
+### Feature 2: Show/Hide Event Details
 
-As a **User**
-I should be able to **show and hide events**
+As a **User**  
+I should be able to **show and hide events**  
 So that **I see the event and then not see them**
 
 **Scenario 1**:
@@ -42,10 +42,10 @@ Event details have been expanded, clicking event again should minimize those det
 - **When** the user clicks on an event again
 - **Then** the event should minimize, no longer showing the full details.
 
-Feature 3: Specify Number of Events
+### Feature 3: Specify Number of Events
 
-As a **User,**
-I should be able to **see the number of events per location**
+As a **User,**  
+I should be able to **see the number of events per location**  
 So that **I can look a location how many events are there**
 
 **Scenario 1:**
@@ -62,10 +62,10 @@ User has searched for a specific city, show number of upcoming events for that c
 - **When** the user opens the app
 - **Then** the user should see the number for amount of upcoming events for that city
 
-Feature 4: Use the App when Offline
+### Feature 4: Use the App when Offline
 
-As a **User,**
-I should be able to **use app when offline**
+As a **User,**  
+I should be able to **use app when offline**  
 So that **I can be offline and still use the app**
 
 **Scenario 1:**
@@ -82,10 +82,10 @@ User hasn’t opened the app when online and is now offline and cannot see any e
 - **When** the user opens the app
 - **Then** the user should see no events because nothing has been downloaded when online.
 
-Feature 5: Add an app Shortcut to the home screen
+### Feature 5: Add an app Shortcut to the home screen
 
-As a **User,**
-I should be able to **Add an App shortcut to the home screen**
+As a **User,**  
+I should be able to **Add an App shortcut to the home screen**  
 So that **I can click a shortcut on the home screen and open the app**
 
 **Scenario 1:**
@@ -95,10 +95,10 @@ User has installed the app and adds a shortcut to open the app on their home scr
 - **When** the user selects the app, should be able to add a shortcut
 - **Then** the user should have shortcut added to the home screen
 
-Feature 6: Display charts visualizing event details
+### Feature 6: Display charts visualizing event details
 
-As a **User,**
-I should be able to **see charts visualizing event details in each city**
+As a **User,**  
+I should be able to **see charts visualizing event details in each city**  
 So that **I can review a chart to better understand what events are in which city**
 
 **Scenario 1:**
