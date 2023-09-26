@@ -107,3 +107,7 @@ User selects charts pages and can view the kind of events in each city
 - **Given** user hasn’t searched for any city
 - **When** the user opens the charts page
 - **Then** the user should see a chart of the types of upcoming events in each city
+
+## Why use Serverless functions
+
+Using serverless functions will allow the Meet App, to having real time data processing, provide event notification, authenticate users and it will allow for more rapid deployment of the application and reduce the infrastructure setup needed to make the application scalable available for more users easier. Most notably, the user authentication will allow for a broader range of users without having to maintain that functionality on our own machines.
