@@ -48,6 +48,52 @@ module.exports.getAccessToken = async (event) => {
       return resolve(response);
     });
   })
+    .then((response) => {
+      //Respond with oAuth token
+      return {
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": true,
+        },
+        body: JSON.stringify(response),
+      };
+    })
+    .catch((error) => {
+      // Handle error
+      return {
+        statusCode: 500,
+        body: JSON.stringify(error),
+      };
+    });
+};
+
+module.exports.getCalendarEvents = async (event) => {
+  // Get Access token
+  const access_token = decodeURIComponent(
+    `${event.pathParameters.access_token}`
+  );
+  //  set Credentials
+  oAuth2Client.setCredentials({ access_token });
+  // get events from calendar
+  return new Promise((resolve, reject) => {
+    calendar.events.list(
+      {
+        calendarId: CALENDAR_ID,
+        auth: oAuth2Client,
+        timeMin: new Date().toISOString(),
+        singleEvents: true,
+        orderBy: "startTime",
+      },
+      (error, response) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(response);
+        }
+      }
+    );
+  })
     .then((results) => {
       //Respond with oAuth token
       return {
@@ -56,7 +102,14 @@ module.exports.getAccessToken = async (event) => {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": true,
         },
-        body: JSON.stringify(results),
+        body: JSON.stringify({ events: results.data.items }),
+      };
+    })
+    .catch((error) => {
+      // Handle error
+      return {
+        statusCode: 500,
+        body: JSON.stringify(error),
       };
     })
     .catch((error) => {
