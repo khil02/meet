@@ -15,21 +15,17 @@ describe("<CitySearch /> component", () => {
   });
 
   test("render text input", () => {
-    //const CitySearchComponent = render(<CitySearch />);
-    //const cityTextBox = CitySearchComponent.queryByRole("textbox");
     expect(cityTextBox).toBeInTheDocument();
     expect(cityTextBox).toHaveClass("city");
   });
 
   test("suggestions list is hidden by default", () => {
-    //const CitySearchComponent = render(<CitySearch />);
     const suggestionList = CitySearchComponent.queryByRole("list");
     expect(suggestionList).not.toBeInTheDocument();
   });
 
   test("renders a list of suggestions when city textbox gains focus", async () => {
     const user = userEvent.setup();
-    //const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.click(cityTextBox);
     const suggestionList = CitySearchComponent.queryByRole("list");
     expect(suggestionList).toBeInTheDocument();
@@ -43,7 +39,6 @@ describe("<CitySearch /> component", () => {
     CitySearchComponent.rerender(<CitySearch allLocations={allLocations} />);
 
     // user types "Berlin" in city textbox
-    //const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.type(cityTextBox, "Berin");
 
     // filter allLocations to locations matching "Berlin"
@@ -56,7 +51,6 @@ describe("<CitySearch /> component", () => {
       : [];
 
     // get all <li> elements inside the suggestion list
-
     const suggestionListItems = CitySearchComponent.queryAllByRole("listitem");
     expect(suggestionListItems).toHaveLength(suggestions.length + 1);
     for (let i = 0; i < suggestions.length; i += 1) {
@@ -70,7 +64,6 @@ describe("<CitySearch /> component", () => {
     const allLocations = extractLocations(allEvents);
     CitySearchComponent.rerender(<CitySearch allLocations={allLocations} />);
 
-    //const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.type(cityTextBox, "Berlin");
 
     // the suggestion's textContent look like this: "Berlin, Germany"
