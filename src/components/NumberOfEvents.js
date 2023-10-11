@@ -1,9 +1,8 @@
 // src/components/NumberOfEvents.js
 
-import EventList from "./EventList";
 import { useState } from "react";
 
-const NumberOfEvents = ({ eventList }) => {
+const NumberOfEvents = ({}) => {
   const [NOE, setNOE] = useState("32");
 
   const handleNumberChanged = (event) => {
