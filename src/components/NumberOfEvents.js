@@ -1,13 +1,13 @@
 // src/components/NumberOfEvents.js
 
-import { useState } from "react";
+//import { useState } from "react";
 
-const NumberOfEvents = ({}) => {
-  const [NOE, setNOE] = useState("32");
+const NumberOfEvents = ({ setCurrentNOE }) => {
+  //const [NOE, setNOE] = useState(setCurrentNOE);
 
   const handleNumberChanged = (event) => {
     const value = event.target.value;
-    setNOE(value);
+    setCurrentNOE(value);
   };
 
   return (
@@ -16,9 +16,9 @@ const NumberOfEvents = ({}) => {
       <input
         id="NumberOfEvents"
         type="text"
-        value={NOE}
+        defaultValue="32"
         onChange={handleNumberChanged}
-      ></input>
+      />
     </div>
   );
 };
