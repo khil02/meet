@@ -14,7 +14,9 @@ const Event = ({ event }) => {
       <div>
         <h2 className="eventTitle">{event.summary}</h2>
         <div className="location">{event.location}</div>
-        <div className="startTime">{date}</div>
+        <div className="startTime" id="startTime">
+          {date}
+        </div>
         <button
           className="detailsButton"
           onClick={() => {

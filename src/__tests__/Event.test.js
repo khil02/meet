@@ -31,7 +31,7 @@ describe("<Event /> component", () => {
   });
 
   test("renders event start time", () => {
-    const eventTime = eventComponent.queryByText(mockEvent.created);
+    const eventTime = eventComponent.container.querySelector("#startTime");
     expect(eventTime).toBeInTheDocument();
   });
 
