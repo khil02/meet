@@ -1,7 +1,5 @@
 // src/components/NumberOfEvents.js
 
-//import { useState } from "react";
-
 const NumberOfEvents = ({ setCurrentNOE }) => {
   //const [NOE, setNOE] = useState(setCurrentNOE);
 
