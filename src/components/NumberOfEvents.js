@@ -13,6 +13,7 @@ const NumberOfEvents = ({ setCurrentNOE }) => {
       "Number of events: "
       <input
         id="NumberOfEvents"
+        className="NumberOfEvents"
         type="text"
         defaultValue="32"
         onChange={handleNumberChanged}
