@@ -38,6 +38,11 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
         placeholder="Search for a city"
         value={query}
         onFocus={() => setShowSuggestions(true)}
+        onBlur={() => {
+          setTimeout(() => {
+            setShowSuggestions(false);
+          }, 200);
+        }}
         onChange={handleInputChanged}
       />
       {showSuggestions ? (
