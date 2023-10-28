@@ -70,14 +70,16 @@ describe("Filter Events by city", () => {
     expect(CitySearch).toBe("Berlin, Germany");
   });
 
-  //Couldn't figure out how to evaluate with puppeteer, tested elsewhere though
-  //   test("selected city matches list of events.", async () => {
-  //     const CitySearch = await page.$eval(".city", (el) => el.value);
+  test("selected city matches list of events.", async () => {
+    const CitySearch = await page.$eval(".city", (el) => el.value);
 
-  //     //this should select the first event and its location class but it doesn't
-  //     const eventCities = await page.$eval(".event .location", (el) => el.value);
-  //     expect(eventCities).toBe(CitySearch);
-  //   });
+    //this should select the first event and its location class
+    const eventCities = await page.$eval(
+      ".event .location",
+      (el) => el.textContent
+    );
+    expect(eventCities).toBe(CitySearch);
+  });
 });
 
 describe("Specify Number of Events", () => {
