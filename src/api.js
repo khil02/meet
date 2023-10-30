@@ -22,9 +22,7 @@ export const extractLocations = (events) => {
  * This function will fetch the list of all events
  */
 export const getEvents = async () => {
-  //NProgress.start();
   if (window.location.href.startsWith("http://localhost")) {
-    // NProgress.done();
     return mockData;
   }
 
@@ -44,9 +42,16 @@ export const getEvents = async () => {
   }
 };
 
+const checkToken = async (accessToken) => {
+  const response = await fetch(
+    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
+  );
+  const result = await response.json();
+  return result;
+};
+
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem("access_token");
-
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || tokenCheck.error) {
@@ -58,20 +63,12 @@ export const getAccessToken = async () => {
         "https://p2npsqdp63.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
       );
       const result = await response.json();
-      const { authUrl } = result;
-      return (window.location.href = authUrl);
+      const { authURL } = result;
+      return (window.location.href = authURL);
     }
     return code && getToken(code);
   }
   return accessToken;
-};
-
-const checkToken = async (accessToken) => {
-  const response = await fetch(
-    `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
-  );
-  const result = await response.json();
-  return result;
 };
 
 const removeQuery = () => {
