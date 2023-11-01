@@ -1,11 +1,17 @@
 // src/components/NumberOfEvents.js
 
-const NumberOfEvents = ({ setCurrentNOE }) => {
-  //const [NOE, setNOE] = useState(setCurrentNOE);
+const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
+  let errorText;
 
   const handleNumberChanged = (event) => {
     const value = event.target.value;
-    setCurrentNOE(value);
+    if (isNaN(value) || value <= 0) {
+      errorText = "Only Positive numbers are allowed";
+    } else {
+      errorText = "";
+      setCurrentNOE(value);
+    }
+    setErrorAlert(errorText);
   };
 
   return (
