@@ -117,8 +117,3 @@ input[type="number"] {
 .events-container{
   flex:auto;
 }
-
-.header{
-  text-align: left;
-  font-size: 65;
-}

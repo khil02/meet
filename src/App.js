@@ -40,7 +40,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="header">Meet App</div>
       <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
