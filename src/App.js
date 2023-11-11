@@ -40,6 +40,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="header">Meet App</div>
       <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
@@ -59,7 +60,9 @@ const App = () => {
         <EventsGenresChart events={events} />
         <CityEventsChart allLocations={allLocations} events={events} />
       </div>
-      <EventList events={events} />
+      <div className="events-container">
+        <EventList events={events} />
+      </div>
     </div>
   );
 };

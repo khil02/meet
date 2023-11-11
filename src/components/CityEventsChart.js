@@ -46,7 +46,7 @@ const CityEventsChart = ({ allLocations, events }) => {
           name="City"
           angle={60}
           interval={0}
-          tick={{ dx: 20, dy: 40, fontSize: 25 }}
+          tick={{ dx: 20, dy: 40, fontSize: 18 }}
         />
         <YAxis
           type="number"

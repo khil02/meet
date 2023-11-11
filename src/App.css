@@ -99,6 +99,7 @@ input[type="number"] {
 
 .charts-container{
   display: grid;
+  flex: auto;
   grid-template-columns: 1fr 1fr;
   /* colors: #0088FE;
   colors: #00C49F;
@@ -111,4 +112,13 @@ input[type="number"] {
   .charts-container {
     grid-template-columns: 1fr;
   }
+}
+
+.events-container{
+  flex:auto;
+}
+
+.header{
+  text-align: left;
+  font-size: 65;
 }
