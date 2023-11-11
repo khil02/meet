@@ -100,6 +100,11 @@ input[type="number"] {
 .charts-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* colors: #0088FE;
+  colors: #00C49F;
+  colors: #FFBB28;
+  colors: #cd28ff;
+  colors: #FF8042; */
 }
 
 @media(max-width: 768px){
